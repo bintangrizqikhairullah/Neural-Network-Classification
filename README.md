@@ -14,16 +14,22 @@ For our classification example, we'll use the Iris dataset, a classic dataset in
 
 We'll implement the neural network classification model in Python using the TensorFlow library. TensorFlow is an open-source machine learning framework developed by Google that provides a comprehensive ecosystem of tools and libraries for building and deploying machine learning models.
 
-### Requirements
+### Building the Neural Network Model
 
-Before we begin, make sure you have the following prerequisites installed:
+We'll use TensorFlow's high-level Keras API to build the neural network model. Keras provides a user-friendly interface for building and training neural networks, making it easy to define the model architecture.
 
-- Python 3.x
-- TensorFlow
-- NumPy
-- Matplotlib
+```python
+import tensorflow as tf
+from tensorflow.keras import models, layers
 
-You can install the required Python packages using pip:
+# Define the model architecture
+model = models.Sequential([
+    layers.Dense(64, activation='relu', input_shape=(4,)),
+    layers.Dense(64, activation='relu'),
+    layers.Dense(3, activation='softmax')
+])
 
-```bash
-pip install tensorflow numpy matplotlib
+# Compile the model
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
