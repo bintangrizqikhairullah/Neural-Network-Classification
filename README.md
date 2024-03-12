@@ -33,7 +33,7 @@ model = models.Sequential([
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
-
+'''
 
 Sure, here's the modified article without the requirement parts, references, and about the author section:
 
