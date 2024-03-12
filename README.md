@@ -51,10 +51,11 @@ Once the model is trained, we can evaluate its performance on the testing set to
         # Evaluate the model on the testing set
         loss, accuracy = model.evaluate(X_test, y_test)
         print(f'Test Accuracy: {accuracy}')
+        
+        1/1 [==============================] - 0s 33ms/step - loss: 0.2643 - accuracy: 0.9667
+        Test Accuracy: 0.9666666388511658
 
 We can also visualize the training process using Matplotlib to plot the training and validation accuracy over epochs.
-
-import matplotlib.pyplot as plt
 
         # Plot training and validation accuracy
         plt.plot(history.history['accuracy'])
