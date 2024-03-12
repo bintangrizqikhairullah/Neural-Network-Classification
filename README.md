@@ -34,3 +34,36 @@ We'll use TensorFlow's high-level Keras API to build the neural network model. K
                       metrics=['accuracy'])
 
 In this example, we define a simple feedforward neural network with two hidden layers, each containing 64 neurons and ReLU activation functions. The output layer consists of three neurons corresponding to the three classes, with a softmax activation function to output class probabilities.
+
+### Training the Model
+
+Next, we'll train the model on the Iris dataset. We'll split the dataset into training and testing sets, with 80% of the data used for training and 20% for testing.
+
+        # Train the model
+        history = model.fit(X_train, y_train, epochs=50, validation_split=0.2)
+
+During training, the model learns to minimize the categorical cross-entropy loss function using the Adam optimizer.
+
+### Evaluating the Model
+
+Once the model is trained, we can evaluate its performance on the testing set to assess its accuracy.
+
+        # Evaluate the model on the testing set
+        loss, accuracy = model.evaluate(X_test, y_test)
+        print(f'Test Accuracy: {accuracy}')
+
+We can also visualize the training process using Matplotlib to plot the training and validation accuracy over epochs.
+
+import matplotlib.pyplot as plt
+
+        # Plot training and validation accuracy
+        plt.plot(history.history['accuracy'])
+        plt.plot(history.history['val_accuracy'])
+        plt.title('Model Accuracy')
+        plt.xlabel('Epoch')
+        plt.ylabel('Accuracy')
+        plt.legend(['Train', 'Validation'], loc='upper left')
+        plt.show()
+
+### Conclusion
+In this article, we've explored how to implement a neural network classification model in Python using the TensorFlow library. We used the Iris dataset as a simple example to demonstrate the process of building, training, and evaluating a neural network for classification tasks. TensorFlow provides a powerful and flexible framework for building various types of machine learning models, making it a valuable tool for practitioners and researchers alike.
