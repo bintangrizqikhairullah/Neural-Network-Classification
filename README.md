@@ -1,5 +1,7 @@
 # Neural Network Classification in Python
 
+![image](https://github.com/bintangrizqikhairullah/Neural-Network-Classification/assets/101108509/eb208ffa-e3f4-48be-84c4-f64da3be4b76)
+
 Neural networks are a powerful class of machine learning models that have gained popularity due to their ability to effectively learn complex patterns in data. In this article, we'll explore how to implement a neural network classification model in Python using the TensorFlow library. We'll walk through the process of building, training, and evaluating a neural network for classification tasks, using a classic example dataset.
 
 ## Introduction to Neural Network Classification
